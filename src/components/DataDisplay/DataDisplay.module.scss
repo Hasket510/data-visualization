@@ -1,0 +1,111 @@
+@use '../../global.scss' as c;
+
+.container {
+	display: flex;
+	justify-content: space-around;
+	margin-bottom: 40px;
+}
+
+.column {
+	padding-top: 90px;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: end;
+	width: 15%;
+
+	& .columnLabel {
+		display: inline-block;
+		padding-top: 15px;
+		font-size: 10px;
+		font-weight: 400;
+		line-height: 12px;
+		text-align: center;
+		color: c.$gray;
+	}
+}
+
+.bar {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: white;
+	font-size: 14px;
+	font-weight: 700;
+	line-height: 16px;
+
+	&.front {
+		background-color: c.$blue;
+		border-top-left-radius: 10px;
+		border-top-right-radius: 10px;
+	}
+
+	&.back {
+		background-color: c.$purple;
+	}
+
+	&.db {
+		background-color: c.$pink;
+		border-bottom-left-radius: 10px;
+		border-bottom-right-radius: 10px;
+	}
+
+	&.norm {
+		border-radius: 10px;
+		background: repeating-linear-gradient(
+			-45deg,
+			c.$white 10% 20%,
+			c.$blue 20% 30%,
+			c.$white 30% 40%,
+			c.$blue 40% 50%
+		);
+
+		& .normValue {
+			padding: 4px 12px;
+			border-radius: 5px;
+			background-color: c.$white;
+			color: c.$gray;
+		}
+	}
+}
+
+.different {
+	position: relative;
+	padding: 4px 12px 4px 16px;
+	align-self: self-start;
+	font-size: 14px;
+	font-weight: 700;
+	line-height: 16px;
+	color: c.$white;
+	border-radius: 50px;
+	background-color: c.$gray;
+
+	&.plus {
+		background-color: c.$green;
+
+		&::before {
+			content: ' ';
+			left: 8px;
+			top: 30%;
+			position: absolute;
+			background-image: url('/src/assets/arrow.svg');
+			width: 8px;
+			height: 10px;
+			rotate: 180deg;
+		}
+	}
+
+	&.minus {
+		background-color: c.$orange;
+
+		&::before {
+			content: ' ';
+			left: 8px;
+			top: 30%;
+			position: absolute;
+			background-image: url('/src/assets/arrow.svg');
+			width: 8px;
+			height: 10px;
+		}
+	}
+}
